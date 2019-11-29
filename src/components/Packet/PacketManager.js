@@ -1,12 +1,19 @@
 import React from 'react';
 import Packet from './Packet';
 
+class Error extends React.Component {
+    render() {
+        return <div>Something went wrong with Loading the Packets.</div>
+    }
+}
 
 class PacketManager extends React.Component {
     constructor() {
         super();
         this.state = {
-            packets: []
+            packets: [<div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>]
         }
         this.getData();
     }
@@ -28,7 +35,10 @@ class PacketManager extends React.Component {
                 packets: packets
             });
         }).catch((err) => {
-            console.error(err);
+            console.error(err.message);
+            this.setState({
+                packets: <Error/>
+            });
         });
     }
 
