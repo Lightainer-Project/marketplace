@@ -12,7 +12,7 @@ class PacketManager extends React.Component {
     }
 
     async getData() {
-        fetch('http://niki2k1.feste-ip.net:56232/packets').then(async (response) => {
+        fetch('https://niki2k1.feste-ip.net:56232/packets').then(async (response) => {
             let packets = [];
             for (const packet of await response.json()) {
                 packets.push(<Packet
