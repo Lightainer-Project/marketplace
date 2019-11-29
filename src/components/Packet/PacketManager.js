@@ -11,15 +11,15 @@ class PacketManager extends React.Component {
     constructor() {
         super();
         this.state = {
-            packets: [<div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
+            packets: [<div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
           </div>]
         }
         this.getData();
     }
 
     async getData() {
-        fetch('https://niki2k1.feste-ip.net:56232/packets').then(async (response) => {
+        fetch('https://lightainer-api.frozencloud.de').then(async (response) => {
             let packets = [];
             for (const packet of await response.json()) {
                 packets.push(<Packet
