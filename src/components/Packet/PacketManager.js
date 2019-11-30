@@ -1,5 +1,6 @@
 import React from 'react';
 import Packet from './Packet';
+import { Container } from 'shards-react';
 
 class Error extends React.Component {
     render() {
@@ -11,7 +12,7 @@ class PacketManager extends React.Component {
     constructor() {
         super();
         this.state = {
-            packets: [<div className="spinner-border" role="status">
+            packets: [<div className="spinner-border" role="status" key="pm_spinner">
             <span className="sr-only">Loading...</span>
           </div>]
         }
@@ -43,7 +44,7 @@ class PacketManager extends React.Component {
     }
 
     render() {
-        return this.state.packets;
+        return <Container className="d-flex flex-wrap justify-content-center mt-4">{ this.state.packets }</Container>
     }
 }
 
