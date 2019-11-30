@@ -17,12 +17,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AddPacketModal from '../Modal/Modal';
 
 class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.toggleNavbar = this.toggleNavbar.bind(this);
+
+        this.state = {
+            collapseOpen: false
+        };
+    }
+
+    toggleNavbar() {
+        this.setState({
+            ...this.state,
+            ...{
+                collapseOpen: !this.state.collapseOpen
+            }
+        });
+    }
+
     render() {
         return <Navbar type="dark" theme="primary" expand="md">
             <NavbarBrand href="#"><FontAwesomeIcon icon={faShoppingCart} /> Lightainer Marketplace</NavbarBrand>
-            <NavbarToggler />
+            <NavbarToggler onClick={this.toggleNavbar}/>
 
-            <Collapse navbar>
+            <Collapse open={this.state.collapseOpen} navbar>
                 <Nav navbar>
                     <NavItem>
                         <NavLink active href="#">
@@ -30,7 +49,7 @@ class NavBar extends React.Component {
               </NavLink>
                     </NavItem>
                     <NavItem>
-                        <AddPacketModal marketplaceApi={ this.props.marketplaceApi }/>
+                        <AddPacketModal marketplaceApi={this.props.marketplaceApi} />
                     </NavItem>
                     <NavItem>
                         <NavLink active href="#">
