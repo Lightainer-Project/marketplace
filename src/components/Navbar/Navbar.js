@@ -30,7 +30,7 @@ class NavBar extends React.Component {
               </NavLink>
                     </NavItem>
                     <NavItem>
-                        <AddPacketModal />
+                        <AddPacketModal marketplaceApi={ this.props.marketplaceApi }/>
                     </NavItem>
                     <NavItem>
                         <NavLink active href="#">
