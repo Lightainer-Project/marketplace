@@ -37,9 +37,9 @@ class NavBar extends React.Component {
     }
 
     render() {
-        return <Navbar type="dark" theme="primary" expand="md">
+        return <Navbar type="dark" theme="primary" expand="md" sticky="top">
             <NavbarBrand href="#"><FontAwesomeIcon icon={faShoppingCart} /> Lightainer Marketplace</NavbarBrand>
-            <NavbarToggler onClick={this.toggleNavbar}/>
+            <NavbarToggler onClick={this.toggleNavbar} />
 
             <Collapse open={this.state.collapseOpen} navbar>
                 <Nav navbar>

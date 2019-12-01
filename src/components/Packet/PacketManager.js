@@ -19,7 +19,7 @@ class PacketManager extends React.Component {
     }
 
     render() {
-        return <Container className="d-flex flex-wrap justify-content-center mt-4">{ this.state.packets }</Container>
+        return <Container className="d-flex flex-wrap justify-content-center mt-3">{ this.state.packets }</Container>
     }
 }
 
