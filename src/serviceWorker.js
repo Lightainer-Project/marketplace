@@ -133,3 +133,11 @@ export function unregister() {
     });
   }
 }
+
+export function update() {
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(update => {
+      update.update();
+    })
+  }
+}

@@ -15,6 +15,7 @@ import {
 import { faSearch, faHome, faShoppingCart, faBoxes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AddPacketModal from '../Modal/Modal';
+import * as serviceWorker from '../../serviceWorker';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -38,13 +39,15 @@ class NavBar extends React.Component {
 
     render() {
         return <Navbar type="dark" theme="primary" expand="md" sticky="top">
-            <NavbarBrand href="#"><FontAwesomeIcon icon={faShoppingCart} /> Lightainer Marketplace</NavbarBrand>
+            <NavbarBrand href="/" onClick={() => {
+                serviceWorker.update();
+            }}><FontAwesomeIcon icon={faShoppingCart} /> Lightainer Marketplace</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} />
 
             <Collapse open={this.state.collapseOpen} navbar>
                 <Nav navbar>
                     <NavItem>
-                        <NavLink active href="#">
+                        <NavLink active href="/">
                             <FontAwesomeIcon icon={faHome} /> Home
               </NavLink>
                     </NavItem>

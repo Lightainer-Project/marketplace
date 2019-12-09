@@ -21,7 +21,7 @@ class Packet extends React.Component {
                 </div>
 
             </CardBody>
-            <CardFooter>{this.props.author} • {new Date().toDateString()}</CardFooter>
+            <CardFooter className="small">{this.props.author} • {new Date().toDateString()}</CardFooter>
         </Card>
     }
 }
