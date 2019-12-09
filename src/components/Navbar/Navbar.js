@@ -39,8 +39,10 @@ class NavBar extends React.Component {
 
     render() {
         return <Navbar type="dark" theme="primary" expand="md" sticky="top">
-            <NavbarBrand href="/marketplace" onClick={() => {
+            <NavbarBrand href="" onClick={(e) => {
+                e.preventDefault();
                 serviceWorker.update();
+                window.location.reload();
             }}><FontAwesomeIcon icon={faShoppingCart} /> Lightainer Marketplace</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} />
 
