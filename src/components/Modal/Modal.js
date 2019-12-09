@@ -34,9 +34,9 @@ export default class AddPacketModal extends React.Component {
         event.preventDefault();
         let data = this.state;
         data.author = 'Marketplace';
-        const response = await fetch('https://lightainer-api.frozencloud.de', {
+        await fetch('https://lightainer-api.frozencloud.de', {
             method: 'POST',
-            mode: 'cors',
+            mode: 'no-cors',
             cache: 'no-cache',
             credentials: 'same-origin',
             headers: {
@@ -46,7 +46,7 @@ export default class AddPacketModal extends React.Component {
             referrer: 'no-referrer',
             body: JSON.stringify(data)
           });
-          console.log(await response.json());
+
           this.props.marketplaceApi.getData();
           this.setState({
             name: '',
