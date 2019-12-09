@@ -39,7 +39,7 @@ class NavBar extends React.Component {
 
     render() {
         return <Navbar type="dark" theme="primary" expand="md" sticky="top">
-            <NavbarBrand href="/" onClick={() => {
+            <NavbarBrand href="/marketplace" onClick={() => {
                 serviceWorker.update();
             }}><FontAwesomeIcon icon={faShoppingCart} /> Lightainer Marketplace</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} />
@@ -47,7 +47,7 @@ class NavBar extends React.Component {
             <Collapse open={this.state.collapseOpen} navbar>
                 <Nav navbar>
                     <NavItem>
-                        <NavLink active href="/">
+                        <NavLink active href="/marketplace">
                             <FontAwesomeIcon icon={faHome} /> Home
               </NavLink>
                     </NavItem>
