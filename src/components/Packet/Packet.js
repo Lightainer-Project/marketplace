@@ -17,7 +17,7 @@ class Packet extends React.Component {
                 <p>{this.props.description}</p>
                 <div className="d-flex justify-content-between">
                     <Button><FontAwesomeIcon icon={faDownload} /> Install</Button>
-                    <Button theme="secondary" href={ "https://lightainer-api.frozencloud.de/packets?id=" + this.props.id } target="_blank"><FontAwesomeIcon icon={faInfoCircle} /> Details</Button>
+                    <Button theme="secondary" href={ "https://lightainer-api.frozencloud.de?id=" + this.props.id } target="_blank"><FontAwesomeIcon icon={faInfoCircle} /> Details</Button>
                 </div>
 
             </CardBody>
